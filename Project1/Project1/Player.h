@@ -7,14 +7,19 @@
 class Player
 {
 public:
+    int state;
+    bool ground;
+    float xPos, yPos;
     Player();
     ~Player();
+    void Jump();
     void update();
     void draw(sf::RenderWindow& window);
 
-private:
-    float drawX, drawY;
+private:    
     sf::Texture texture;
     sf::Sprite pSprite;
     sf::Sprite idleFrames[IDLEFRAMES];
+    void States();
+    void Animate();
 };
